@@ -1,0 +1,9 @@
+
+t
+java:S1488H"^Immediately return this expression instead of assigning it to the temporary variable "myflux".(°Ü∆©
+M
+java:S18543"8Remove this useless assignment to local variable "http".(√‚Ó.
+>
+java:S14813")Remove this unused "http" local variable.(√‚Ó.
+J
+java:S1068"5Remove this unused "kafkaStringConfig" private field.(Ç¶ác
