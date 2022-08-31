@@ -1,0 +1,159 @@
+{
+	"info": {
+		"_postman_id": "64827a47-b951-4a9f-ace4-a03b220145f5",
+		"name": "Proyecto 4",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "22634807"
+	},
+	"item": [
+		{
+			"name": "01-create Copy",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							"const dateNow= new Date();\r",
+							"pm.environment.set('currentDate', dateNow.toISOString());"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{ \"id\" : \"5\", \"codeProduct\" : \"PB-002\", \"name\" : \"Corriente\", \"status\" : \"Cuenta Corriente\" , \"auditUserInsertName\" : \"0\", \"auditUserInsertP\" : \"\", \"idProductSubType\" : \"1\", \"auditUserInsertDate\" : \"{{currentDate}}\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/yanki/create",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"yanki",
+						"create"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "02-readAll Copy",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/yanki/getCoinBanks",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"yanki",
+						"getCoinBanks"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "03-update Copy",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							"const dateNow= new Date();\r",
+							"pm.environment.set('currentDate', dateNow.toISOString());"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{ \"id\" : \"5\", \"code\": \"0009\", \"codeCustomer\" : \"PB-002\", \"staffNameFirst\" : \"Name01\", \"status\" : \"Otros\" , \"staffNameSecond\" : \"App0001\", \"name\" : \"test01\", \"description\" : \"1\", \"balanceCurrent\":100\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/yanki/update/5",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"yanki",
+						"update",
+						"5"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "04-delete Copy",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							"const dateNow= new Date();\r",
+							"pm.environment.set('currentDate', dateNow.toISOString());"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{ \"id\" : 2, \"code\" : \"PB-002\", \"description\" : \"Cuenta Y Corriente\"}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/yanki/delete/5",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"yanki",
+						"delete",
+						"5"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
